@@ -11,3 +11,5 @@ var images = await api.Generate.GetGeneratedImages(generationId);
 ```
 
 # TODO
+
+Cleanup code base, add more examples in readme for all examples.
