@@ -2,10 +2,7 @@
 
 using Leonardo.Generation.Interfaces;
 using Leonardo.Generation.Models;
-using Newtonsoft.Json;
 using System;
-using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Leonardo.Generation
@@ -15,13 +12,13 @@ namespace Leonardo.Generation
         protected override string Endpoint { get { return "generations"; } }
         internal GenerationEndPoint(LeonardoAPI Api) : base(Api) { }
 
-        public async Task<string> GenerateImageGeneration(string prompt)
+        public async Task<string> Image(string prompt)
         {
             var request = new CreateGenerationRequest(prompt);
-            return await GenerateImageGeneration(request);
+            return await Image(request);
         }
 
-        public async Task<string> GenerateImageGeneration(CreateGenerationRequest request)
+        public async Task<string> Image(CreateGenerationRequest request)
         {
             try
             {
@@ -39,12 +36,13 @@ namespace Leonardo.Generation
             }
         }
 
-        public async Task<GetSingleGenerationResponse> GetGenerationImages(string id)
+        public async Task<Generations> GetGeneratedImages(string id)
         {
-            return await HttpGet<GetSingleGenerationResponse>($"{this.Url}/{id}");
+            var response = await HttpGet<GetSingleGenerationResponse>($"{this.Url}/{id}");
+            return response.Generations;
         }
 
-        public async Task<UserGenerations> GetGenerationsByUserId(string id, int offset = 0, int limit = 10)
+        public async Task<UserGenerations> GetGeneratedImagesByUserId(string id, int offset = 0, int limit = 10)
         {
             return await HttpGet<UserGenerations>($"{this.Url}/users/{id}?offset={offset}&limit={limit}");
         }
