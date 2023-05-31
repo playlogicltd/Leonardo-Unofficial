@@ -1,3 +1,5 @@
+# Leonardo is updating their API, I will be updating this repository when it does with many of the indentation fixes needed, comments and better documentation as they add to their API in the coming weeks.(5/30/2023)
+
 # Leonardo-Unofficial SDK for accessing the LeonardoAI API
 A simple C# .NET wrapper library to use with Leonardo's API.  This is an unofficial wrapper library around the Leonardo API.  I am not affiliated with Leonardo and this library is not endorsed or supported by them.
 
