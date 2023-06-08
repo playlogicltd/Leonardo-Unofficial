@@ -10,18 +10,18 @@ namespace Leonardo.Generation.Models
     {
         public CreateGenerationRequest(string prompt
             , string? negativePrompt = null
-            , string? modelId = "291be633-cb24-434f-898f-e662799936ad"
+            , string? modelId = "d2fb9cf9-7999-4ae5-8bfe-f0df2d32abf8"
             , string? sdVersion = null
             , int numImages = 4
-            , int width = 512
-            , int height = 512
-            , int numInferenceSteps = 0
+            , int width = 640
+            , int height = 832
+            , int numInferenceSteps = 10
             , int guidanceScale = 7
             , string? initGenerationImageId = null
             , string? initImageId = null
             , float? initStrength = null
-            , string? scheduler = null
-            , string? presetStyle = null
+            , string? scheduler = "LEONARDO"
+            , string? presetStyle = "LEONARDO"
             , bool? tiling = null
             , bool? isPublic = null
             , bool? promptMagic = null
